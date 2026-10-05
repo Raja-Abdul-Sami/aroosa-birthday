@@ -100,7 +100,7 @@ nav i.on{background:var(--g);transform:scale(1.5)}
 <canvas id="c"></canvas>
 
 <!-- pages/index (intro) -->
-<section class="sc on"><div class="heart" id="h0">🖤</div><p class="date">06 · 10 · 2026</p><p>Tap the heart. You're gonna love it!!.</p></section>
+<section class="sc on"><div class="heart" id="h0">🖤</div><p class="date">06 · 10 · 2026</p><p>Tap the heart. This one is for Aroosa.</p></section>
 <!-- pages/birthday -->
 <section class="sc"><p class="date">06 · 10 · 2026</p><h1 class="ltr" id="hb"></h1><h1 class="ltr" id="nm"></h1><p>Today the world got a little more beautiful.</p><button class="b nx">Open the celebration</button></section>
 <!-- pages/cake -->
@@ -123,7 +123,7 @@ nav i.on{background:var(--g);transform:scale(1.5)}
 
 <script>
 /* ✏️ EDIT HERE */
-const C={name:"Aroosa",from:"Abdul Sami",
+const C={name:"Aroosa",from:"Raja",
 reasons:["Your smile","Your kindness","Your laugh","You believe in me","Our late-night talks","You make life special"],
 memories:["First meet","Our favourite place","That crazy day","Just us"],
 secret:"The biggest surprise is waiting for you in person ❤️",
@@ -139,7 +139,7 @@ let sx;addEventListener('touchstart',e=>sx=e.touches[0].clientX);addEventListene
 /* sound */
 let ac;function ting(f=1800){try{ac=ac||new AudioContext();const o=ac.createOscillator(),g=ac.createGain();o.frequency.value=f+Math.random()*600;o.type='triangle';g.gain.setValueAtTime(.15,ac.currentTime);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+.6);o.connect(g).connect(ac.destination);o.start();o.stop(ac.currentTime+.6)}catch(e){}}
 /* cake */
-const W={key:"fa93de37-132d-488b-9963-e3f621f09859",tg:"",chat:"",wa:"",ig:""}; /* ✏️ wish delivery: Web3Forms key, WhatsApp number (923xxxxxxxxx), Instagram username */
+const W={key:"fa93de37-132d-488b-9963-e3f621f09859",mail:"",tg:"",chat:"",wa:"",ig:""}; /* ✏️ wish delivery: Web3Forms key, WhatsApp number (923xxxxxxxxx), Instagram username */
 const dr=(x,y,w,n)=>{const q=w/n;let p=`M${x} ${y}`;for(let i=0;i<n;i++)p+=`q${q/2} ${14+(i%2)*9} ${q} 0`;return p+`v-14h-${w}z`};
 const cl=['#f6dc9a','#9b1b30','#f8eadf'];
 $('#ck').innerHTML=`<defs><linearGradient id="c1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a1226"/><stop offset="1" stop-color="#3a0610"/></linearGradient><linearGradient id="c2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b01c38"/><stop offset="1" stop-color="#5b0c1a"/></linearGradient></defs>
@@ -155,7 +155,7 @@ g.innerHTML=`<rect x="${x-3.5}" y="52" width="7" height="40" rx="2" fill="${cl[i
 g.lastChild.onclick=e=>{e.currentTarget.classList.add('o');const c=$('#cg');c.classList.remove('j');void c.getBoundingClientRect();c.classList.add('j');ting();burst(e.clientX,e.clientY,14);
 if(++out==5){burst(innerWidth/2,innerHeight/3,160);$('#ht').style.display='none';$('#ck').style.width='min(190px,48vw)';$('#wb').style.display='flex'}};$('#cd').append(g)});
 $('#ws').onclick=async()=>{const t=$('#wt').value.trim();if(!t)return;$('#ws').disabled=true;let ok=false;
-if(W.key)try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:W.key,subject:"🎂 Aroosa's birthday wish",from_name:'Birthday site',message:t})});ok=(await r.json()).success}catch(e){}
+if(W.key)try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:W.key,subject:"🎂 Aroosa's birthday wish",name:'Aroosa',email:W.mail||'aroosa@birthday-wish.com',from_name:'Aroosa',message:t})});ok=(await r.json()).success}catch(e){}
 if(W.tg&&W.chat)try{const r=await fetch(`https://api.telegram.org/bot${W.tg}/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:W.chat,text:"🎂 Aroosa's birthday wish:\n\n"+t})});if(r.ok)ok=true}catch(e){}
 $('#wm').textContent="Your wish has flown to the stars ✨";burst(innerWidth/2,innerHeight/2,120);ting();
 if(!ok){try{navigator.clipboard.writeText(t)}catch(e){}let h='';if(W.wa)h+=`<a class="b sm" target="_blank" href="https://wa.me/${W.wa}?text=${encodeURIComponent('My birthday wish 🎂 '+t)}">Send on WhatsApp</a>`;if(W.ig)h+=`<a class="b sm" target="_blank" href="https://ig.me/m/${W.ig}">Send on Instagram</a>`;$('#wl').innerHTML=h}
